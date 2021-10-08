@@ -11,8 +11,3 @@ class StudenetModelViewSet(viewsets.ModelViewSet):
     serializer_class = StudentSerializers 
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
-    
-    
-    
- #http POST http://127.0.0.1:8000/api/token/ username="tester" password="passport123"
- #to send post request to the url    
