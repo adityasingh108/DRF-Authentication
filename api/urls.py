@@ -9,8 +9,8 @@ router.register('student', views.StudenetModelViewSet, basename='Student')
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('token/', CustomAuthToken.as_view()),
-    # path('token/',TokenObtainPairView.as_view()),
-    # path('refresh/',TokenRefreshView.as_view()),
-    # path('verify/',TokenVerifyView.as_view()),
+    # path('token/', CustomAuthToken.as_view()),
+    path('token/',TokenObtainPairView.as_view()),
+    path('token/refresh/',TokenRefreshView.as_view()),
+    path('token/verify/',TokenVerifyView.as_view()),
 ]

@@ -37,17 +37,23 @@ http -f POST  http://127.0.0.1:8000/api/student/ name=jack rollno= 107 city=delh
   
 
 
-### Create Token with JSONWebToken
+### Create, Verify,Refresh Token with JSONWebToken
 * Obtain Token
 
 ```
-  http POST http://127.0.0.1:8000/api/token-obtain/ username="username" password="password"
+  http POST http://127.0.0.1:8000/api/token/ username="username" password="password"
 ```
 * Verify  Token
 ```
-  http POST http://127.0.0.1:8000/api/verifytoken/ token="token"
+  http POST http://127.0.0.1:8000/api/token/verifytoken/ token="token"
 ```
 * Refresh Token
 ```
-  http POST http://127.0.0.1:8000/api/verifytoken/ refresh="token"
+  http POST http://127.0.0.1:8000/api/token/verifytoken/ refresh="token"
+```
+
+### Access the api With JsonWebToken
+
+```
+http http://127.0.0.1/api/student/ "Authentication:Bearer token "
 ```
